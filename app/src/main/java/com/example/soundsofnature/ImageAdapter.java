@@ -3,7 +3,6 @@ package com.example.soundsofnature;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +18,7 @@ import android.widget.RelativeLayout;
 
     private int[] colors;
 
-    public ImageAdapter(Context context, int[] prgmImages, int[] colors) {
+     ImageAdapter(Context context, int[] prgmImages, int[] colors) {
         this.context = context;
         imageId = prgmImages;
         inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
