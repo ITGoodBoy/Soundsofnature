@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/background_for_menu"
+            android:id="@+id/imageView2"
+            android:scaleType="fitXY" />
+
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <Button
+                android:text="Прослуховування"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/listening_button"
+                android:background="@drawable/shape_round_red"
+                android:textColor="@color/colorAccent"
+                android:layout_marginTop="81dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
+
+            <Button
+                android:text="Вікторина"
+                android:layout_height="wrap_content"
+                android:id="@+id/quiz_button"
+                android:background="@drawable/shape_round_blue"
+                android:layout_width="300dp"
+                android:layout_marginTop="72dp"
+                android:layout_below="@+id/listening_button"
+                android:layout_alignLeft="@+id/listening_button"
+                android:layout_alignStart="@+id/listening_button" />
+
+        </RelativeLayout>
+
+    </FrameLayout>
+
+</LinearLayout>
