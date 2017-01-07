@@ -19,14 +19,15 @@ public class ListeningScreen extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.listening_screen);
+        //initialize adapters for animals icons and transport icons
         AdaptersInitialize();
-
+        ////define our buttons from listening_screen layout
         Button animalButton = (Button) findViewById(R.id.animalButton);
         Button transportButton = (Button) findViewById(R.id.transportButton);
 
         animalButton.setOnClickListener(this);
         transportButton.setOnClickListener(this);
-
+        //define our table and add her image
         gridView = (GridView) findViewById(R.id.list);
         gridView.setAdapter(animalAdapter);
         gridView.setOnItemClickListener(this);
@@ -46,7 +47,7 @@ public class ListeningScreen extends AppCompatActivity implements View.OnClickLi
         }
         transportAdapter = new ImageAdapter(this, transportIcons,  SplashScreen.COLORS);
     }
-
+    //change the images animals or transport depending on the button pressed
     @Override
     public void onClick(View view) {
 
@@ -60,7 +61,7 @@ public class ListeningScreen extends AppCompatActivity implements View.OnClickLi
                 break;
         }
     }
-
+    //play sound, depending on the selected animal or transport
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long pos) {
         if (adapterView.getAdapter().equals(animalAdapter)) {
@@ -83,7 +84,7 @@ public class ListeningScreen extends AppCompatActivity implements View.OnClickLi
             }
         }
     }
-
+    //stop our player
     @Override
     public void onBackPressed() {
         super.onBackPressed();

@@ -9,7 +9,7 @@ import android.util.SparseArray;
 import android.view.WindowManager;
 
 public class SplashScreen extends AppCompatActivity {
-
+                 //the color of animals and transport
     public static final int[] COLORS = {Color.BLUE, Color.RED, Color.CYAN, Color.YELLOW, Color.MAGENTA, Color.GREEN, Color.rgb(145, 56, 54), Color.rgb(255, 0, 127),
             Color.rgb(162, 22, 232), Color.rgb(235, 111, 3), Color.rgb(178, 239, 11)};
 
@@ -21,17 +21,20 @@ public class SplashScreen extends AppCompatActivity {
 
 
 
+    //splash screen with a duration of SPLASH_SCREEN_DURATION seconds
     private final int SPLASH_SCREEN_DURATION = 7000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        //full screen mode
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.splash_screen);
+        //download our resources
         resourcesInitialize();
 
-            new Handler().postDelayed(new Runnable() {
+        //run the main menu screen and end the current screen by finish in SPLASH_SCREEN_DURATION seconds
+        new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
                     Intent menuIntent = new Intent(SplashScreen.this, MainMenuScreen.class);
@@ -46,6 +49,7 @@ public class SplashScreen extends AppCompatActivity {
 
     private void resourcesInitialize()
     {
+        //load the resources of the new thread
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -80,6 +84,7 @@ public class SplashScreen extends AppCompatActivity {
 
             }
         });
+        //and start thread
         thread.start();
 
     }

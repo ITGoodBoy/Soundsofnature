@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-
+//Baseadapter inherit from and override the method to implement getview pictures for our table
  class ImageAdapter extends BaseAdapter {
 
     private Context context;
@@ -17,13 +17,13 @@ import android.widget.RelativeLayout;
     private LayoutInflater inflater;
 
     private int[] colors;
-
+    //transmission of images and colors in the constructor
      ImageAdapter(Context context, int[] prgmImages, int[] colors) {
         this.context = context;
         imageId = prgmImages;
         inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.colors = colors;
-
+         //If the color is not enough for our pictures, we will create new colors randomly
         if (colors.length < prgmImages.length)
         {
             this.colors = new int[prgmImages.length];
@@ -57,7 +57,7 @@ import android.widget.RelativeLayout;
     public long getItemId(int position) {
         return position;
     }
-
+    //method of determining our pictures
     @Override
     public View getView(int position, View view, ViewGroup viewGroup) {
         View imageView;

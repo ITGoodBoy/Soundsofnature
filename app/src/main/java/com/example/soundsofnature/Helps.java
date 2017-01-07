@@ -4,10 +4,13 @@ package com.example.soundsofnature;
 import android.content.Context;
 import android.media.MediaPlayer;
 
+//additional methods of the class
  class Helps {
 
 
     private static MediaPlayer player;
+
+    //plays random sounds transmitted in the parameters
     void playSound(Context context, int... sounds)
     {
         if (player == null)
@@ -25,6 +28,7 @@ import android.media.MediaPlayer;
             });
         }
     }
+    //stop our player
      void stop()
      {
          if (player != null) {

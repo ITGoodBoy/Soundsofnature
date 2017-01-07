@@ -20,14 +20,14 @@ public class MainMenuScreen extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.main_menu_screen);
-
+        //define our buttons from main_menu_screen layout
         listeningButton = (Button) findViewById(R.id.listening_button);
         listeningButton.setOnClickListener(this);
         quizButton = (Button) findViewById(R.id.quiz_button);
         quizButton.setOnClickListener(this);
     }
 
-
+    //start the ListenerScreen or a QuizScreen, depending on the button you pressed
     @Override
     public void onClick(View view) {
         switch (view.getId())
